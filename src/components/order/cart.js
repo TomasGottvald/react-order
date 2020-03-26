@@ -12,9 +12,9 @@ function Cart () {
     let totalPrice = 0
     let currency = ''
     const cartItems = cartData.map(function(item){
-            currency = item.prices[0].currency
-            totalPrice += item.prices[0].withVat * item.amount
-            return <CartItem key={item.id} data={item} />
+        currency = item.prices[0].currency
+        totalPrice += item.prices[0].withVat * item.amount
+        return <CartItem key={item.id} data={item} />
     })
 
     return (
@@ -51,7 +51,7 @@ function Cart () {
                                         <IntlProvider locale={ CONFIG.LOCALE }>
                                             <FormattedNumber
                                                 value={ totalPrice }
-                                                style="currency"
+                                                style={`currency`}
                                                 currency={ currency }
                                                 />
                                         </IntlProvider>

@@ -3,6 +3,7 @@ import CONFIG from '../../config'
 import { IntlProvider, FormattedNumber } from 'react-intl';
 
 function PreviewItem(props) {
+
     return (
         <tr className="table-cart-preview__row">
             <td className="table-cart-preview__cell">
@@ -13,7 +14,7 @@ function PreviewItem(props) {
                 <IntlProvider locale={ CONFIG.LOCALE }>
                     <FormattedNumber
                         value={ props.data.prices[0].withVat*props.data.amount }
-                        style="currency"
+                        style={`currency`}
                         currency={ props.data.prices[0].currency }
                         />
                 </IntlProvider>

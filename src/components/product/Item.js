@@ -61,7 +61,7 @@ function ProductItem (props) {
                                 <IntlProvider locale={ CONFIG.LOCALE }>
                                     <FormattedNumber
                                         value={ props.data.prices[0].withVat }
-                                        style="currency"
+                                        style={`currency`}
                                         currency={ props.data.prices[0].currency }
                                         />
                                 </IntlProvider>
@@ -70,7 +70,7 @@ function ProductItem (props) {
                                 <IntlProvider locale={ CONFIG.LOCALE }>
                                     <FormattedNumber
                                         value={ props.data.prices[0].withoutVat }
-                                        style="currency"
+                                        style={`currency`}
                                         currency={ props.data.prices[0].currency }
                                         />
                                 </IntlProvider>
