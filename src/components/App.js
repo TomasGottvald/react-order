@@ -2,6 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import PageHomepage from './pages/Homepage'
+import PageArticle from './pages/Article'
+import PageProductDetail from './pages/ProductDetail'
 
 import OrderProgress from './order/progress'
 import OrderCart from './order/cart'
@@ -35,6 +37,13 @@ function App() {
                 <Route path="/order-sent/">
                     <OrderProgress step='4' />
                     <OrderSent />
+                </Route>
+                <Route path="/article/:articleId/:articleSeoName/">
+                    <PageArticle />
+                </Route>
+
+                <Route path="/product-detail/:productId/:productSeoName/">
+                    <PageProductDetail />
                 </Route>
                 <Route path="/">
                     <PageHomepage />

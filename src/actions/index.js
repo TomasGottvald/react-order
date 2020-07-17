@@ -52,6 +52,13 @@ export const loadHomepageTopItems = ( items ) => {
     }
 }
 
+// articles
+export const loadArticle = ( data ) => {
+    return {
+        type: 'LOAD_ARTICLES',
+        payload: data
+    }
+}
 
 
 // shipping

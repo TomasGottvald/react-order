@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Footer extends React.Component {
     render () {
@@ -54,10 +55,10 @@ class Footer extends React.Component {
                                 no-reply@shopsys.com
                                 <ul className="menu dont-print">
                                     <li className="menu__item">
-                                        <a className="menu__item__link" href="http://127.0.0.1:8000/terms-and-conditions/">Terms and conditions</a>
+                                        <Link className="menu__item__link" to="/article/2/terms-and-conditions/">Terms and conditions</Link>
                                     </li>
                                 </ul>
-                                <a className="menu__item__link" href="http://127.0.0.1:8000/contact/">Contact</a>
+                                <Link className="menu__item__link" to="/article/1/contact/">Contact</Link>
                             </div>
                         </footer>
                     </div>
