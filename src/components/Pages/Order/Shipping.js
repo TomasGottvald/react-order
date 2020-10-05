@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import CONFIG from '../../config'
+import CONFIG from '../../../Config'
 import { IntlProvider, FormattedNumber } from 'react-intl'
 
-import { loadShipping, setShipping } from '../../actions'
+import { loadShipping, setShipping } from '../../../actions'
 import { useSelector, useDispatch } from 'react-redux'
 
 function OrderShipping () {

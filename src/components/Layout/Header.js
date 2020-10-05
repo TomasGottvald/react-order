@@ -1,21 +1,21 @@
 import React from 'react'
-import CONFIG from '../../config'
+import CONFIG from '../../Config'
 import { IntlProvider, FormattedNumber } from 'react-intl';
 import { Link } from 'react-router-dom'
+import Menu from './Menu/Menu'
+import logoSvg from "../../Images/logo.svg"
 
 import { useSelector } from 'react-redux'
 
 function Header() {
     const inCartItems = useSelector( state => state.inCart.items )
-
     let headerCartCount = 0;
     let headerCartAmount = 0;
 
     if(inCartItems && inCartItems.length > 0 ) {
         headerCartCount = inCartItems.length
-
-        const cartItems = inCartItems.map(function(item){
-            headerCartAmount += parseInt(item.prices[0].withVat) * parseInt(item.amount)
+        inCartItems.map( function (item){
+            headerCartAmount += parseInt(item.priceWithVat) * parseInt(item.amount)
         })
     }
 
@@ -26,8 +26,8 @@ function Header() {
                     <div className="web__container">
                         <header className="header">
                             <div className="header__logo">
-                                <a className="logo" href="http://127.0.0.1:8000/">
-                                    <img src="files/logo.svg" alt="Online shop" />
+                                <a className="logo" href="/">
+                                    <img src={logoSvg} alt="Online shop" />
                                 </a>
                             </div>
                             <div className="header__middle dont-print">
@@ -122,10 +122,13 @@ function Header() {
                                 <div className="header__top__left">
                                     <ul className="menu dont-print">
                                         <li className="menu__item">
-                                            <a className="menu__item__link" href="http://127.0.0.1:8000/news/">News</a>
+                                            <a className="menu__item__link" href="/article/08a28636-fb21-42e0-a9c5-057699399a93/contact/">News</a>
                                         </li>
                                         <li className="menu__item">
-                                            <a className="menu__item__link" href="http://127.0.0.1:8000/shopping-guide/">Shopping guide</a>
+                                            <a className="menu__item__link" href="/article/08a28636-fb21-42e0-a9c5-057699399a93/contact/">Shopping guide</a>
+                                        </li>
+                                        <li className="menu__item">
+                                            <a className="menu__item__link" href="/brand-list/">Brand list</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -153,44 +156,7 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className="web__line">
-                <div className="web__container">
-                    <ul className="js-category-list list-menu dont-print
-                        list-menu--root        " id="js-categories">
-                        <li className="list-menu__item js-category-item js-hover-intent" data-hover-intent-class-for-open="active intented" data-hover-intent-force-click="true" data-hover-intent-force-click-element=".js-category-collapse-control">
-                            <a href="http://127.0.0.1:8000/electronics/" className="list-menu__item__link list-menu__item__link--level-1 ">
-                            Electronics
-                            <i className="list-menu__item__control svg svg-arrow js-category-collapse-control" data-url="http://127.0.0.1:8000/categoryPanel/2/"></i>
-                            </a>
-                            <div className="display-none js-category-list-placeholder"></div>
-                        </li>
-                        <li className="list-menu__item js-category-item js-hover-intent" data-hover-intent-class-for-open="active intented" data-hover-intent-force-click="true" data-hover-intent-force-click-element=".js-category-collapse-control">
-                            <a href="http://127.0.0.1:8000/books/" className="list-menu__item__link list-menu__item__link--level-1 ">
-                            Books
-                            </a>
-                            <div className="display-none js-category-list-placeholder"></div>
-                        </li>
-                        <li className="list-menu__item js-category-item js-hover-intent" data-hover-intent-class-for-open="active intented" data-hover-intent-force-click="true" data-hover-intent-force-click-element=".js-category-collapse-control">
-                            <a href="http://127.0.0.1:8000/toys/" className="list-menu__item__link list-menu__item__link--level-1 intented">
-                            Toys
-                            </a>
-                            <div className="display-none js-category-list-placeholder"></div>
-                        </li>
-                        <li className="list-menu__item js-category-item js-hover-intent" data-hover-intent-class-for-open="active intented" data-hover-intent-force-click="true" data-hover-intent-force-click-element=".js-category-collapse-control">
-                            <a href="http://127.0.0.1:8000/garden-tools/" className="list-menu__item__link list-menu__item__link--level-1 intented">
-                            Garden tools
-                            </a>
-                            <div className="display-none js-category-list-placeholder"></div>
-                        </li>
-                        <li className="list-menu__item js-category-item js-hover-intent" data-hover-intent-class-for-open="active intented" data-hover-intent-force-click="true" data-hover-intent-force-click-element=".js-category-collapse-control">
-                            <a href="http://127.0.0.1:8000/food/" className="list-menu__item__link list-menu__item__link--level-1 ">
-                            Food
-                            </a>
-                            <div className="display-none js-category-list-placeholder"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <Menu />
         </div>
     )
 }

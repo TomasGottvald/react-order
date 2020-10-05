@@ -1,8 +1,8 @@
 import React from 'react'
-import CONFIG from '../../config'
+import CONFIG from '../../../Config'
 import { IntlProvider, FormattedNumber } from 'react-intl';
 
-import { increaseCount, decreaseCount, removeFromCart } from '../../actions'
+import { increaseCount, decreaseCount, removeFromCart } from '../../../actions'
 import { useDispatch } from 'react-redux'
 
 function recalcItemPrice () {
@@ -28,9 +28,10 @@ function CartItem(props) {
                 <div className="table-cart__cell__price-mobile">
                     <IntlProvider locale={ CONFIG.LOCALE }>
                         <FormattedNumber
-                            value={ props.data.prices[0].withVat }
+                            value={ props.data.priceWithVat }
                             style={`currency`}
-                            currency={ props.data.prices[0].currency }
+                            minimumFractionDigits={2}
+                            currency={ CONFIG.CURRENCY }
                             />
                     </IntlProvider>
                 </div>
@@ -38,9 +39,10 @@ function CartItem(props) {
             <td className="table-cart__cell table-cart__cell--price js-cart-item-price">
                 <IntlProvider locale={ CONFIG.LOCALE }>
                     <FormattedNumber
-                        value={ props.data.prices[0].withVat }
+                        value={ props.data.priceWithVat }
                         style={`currency`}
-                        currency={ props.data.prices[0].currency }
+                        minimumFractionDigits={2}
+                        currency={ CONFIG.CURRENCY }
                         />
                 </IntlProvider>
             </td>
@@ -48,8 +50,7 @@ function CartItem(props) {
                 <IntlProvider locale={ CONFIG.LOCALE }>
                     <FormattedNumber
                         style={`percent`}
-                        value={ props.data.prices[0].vatRate/100 }
-                        minimumFractionDigits={0}
+                        value={ props.data.priceVatAmount }
                         />
                 </IntlProvider>
             </td>
@@ -69,9 +70,9 @@ function CartItem(props) {
             <td className="table-cart__cell table-cart__cell--price js-cart-item-total-price">
                 <IntlProvider locale={ CONFIG.LOCALE }>
                     <FormattedNumber
-                        value={ props.data.prices[0].withVat * props.data.amount }
+                        value={ props.data.priceWithVat * props.data.amount }
                         style={`currency`}
-                        currency={ props.data.prices[0].currency }
+                        currency={ CONFIG.CURRENCY }
                         />
                 </IntlProvider>
             </td>

@@ -1,5 +1,5 @@
 import React from 'react'
-import CONFIG from '../../config'
+import CONFIG from '../../../Config'
 import { IntlProvider, FormattedNumber } from 'react-intl';
 
 function PreviewItem(props) {
@@ -13,9 +13,9 @@ function PreviewItem(props) {
             <td className="table-cart-preview__cell table-cart-preview__cell--price">
                 <IntlProvider locale={ CONFIG.LOCALE }>
                     <FormattedNumber
-                        value={ props.data.prices[0].withVat*props.data.amount }
+                        value={ props.data.priceWithVat*props.data.amount }
                         style={`currency`}
-                        currency={ props.data.prices[0].currency }
+                        currency={ CONFIG.CURRENCY }
                         />
                 </IntlProvider>
             </td>

@@ -55,10 +55,10 @@ class Footer extends React.Component {
                                 no-reply@shopsys.com
                                 <ul className="menu dont-print">
                                     <li className="menu__item">
-                                        <Link className="menu__item__link" to="/article/2/terms-and-conditions/">Terms and conditions</Link>
+                                        <Link className="menu__item__link" to="/article/terms-and-conditions/">Terms and conditions</Link>
                                     </li>
                                 </ul>
-                                <Link className="menu__item__link" to="/article/1/contact/">Contact</Link>
+                                <Link className="menu__item__link" to="/article/08a28636-fb21-42e0-a9c5-057699399a93/contact/">Contact</Link>
                             </div>
                         </footer>
                     </div>

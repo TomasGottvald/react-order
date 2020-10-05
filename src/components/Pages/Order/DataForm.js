@@ -1,5 +1,5 @@
 import React from 'react'
-import OrderPreview from './preview'
+import OrderPreview from './Preview'
 import { Field, reduxForm } from 'redux-form'
 import { Link } from 'react-router-dom'
 

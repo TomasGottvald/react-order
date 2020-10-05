@@ -3,7 +3,7 @@ const loadingReducer = ( state = { items: [] }, action ) => {
         case 'ADD_TO_CART':
         return {
             ...state,
-            items: [...state.items, {'id': action.item.id, 'name': action.item.name, 'link': action.item.link, 'prices': action.item.prices, 'amount': action.count}]
+            items: [...state.items, {'id': action.item.id, 'name': action.item.name, 'link': action.item.link, 'priceWithVat': action.item.price.priceWithVat, 'priceWihtoutVat': action.item.price.priceWithoutVat, 'priceVatAmount': action.item.price.vatAmount, 'amount': action.count }]
         }
 
         case 'INCREASE_COUNT':

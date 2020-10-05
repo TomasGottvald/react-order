@@ -1,8 +1,6 @@
 import loggedReducer from './isLogged'
 import loadingReducer from './isLoading'
-import loadItemsReducer from './loadItems'
 import addToCartReducer from './cart'
-import loadArticlesReducer from './loadArticles'
 import loadPaymentsReducer from './loadPayments'
 import loadShippingReducer from './loadShipping'
 import setPaymentReducer from './setPayment'
@@ -14,9 +12,7 @@ import { reducer as formReducer } from 'redux-form'
 const allReducers = combineReducers({
     isLogged : loggedReducer,
     isLoading : loadingReducer,
-    loadedItems: loadItemsReducer,
     inCart: addToCartReducer,
-    loadArticles: loadArticlesReducer,
     loadPayments: loadPaymentsReducer,
     loadShipping: loadShippingReducer,
     orderPayment: setPaymentReducer,

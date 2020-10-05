@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../layout/Header'
-import Footer from '../layout/Footer'
-import HomepageProductList from '../product/HomepageProductList'
+import Header from '../Layout/Header'
+import Footer from '../Layout/Footer'
+import HomepageProductList from '../Product/HomepageProductList'
 import { login } from '../../actions'
 
 import { useSelector, useDispatch } from 'react-redux'

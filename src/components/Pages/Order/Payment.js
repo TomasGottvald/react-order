@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import CONFIG from '../../config'
-import { loadPayments, setPayment } from '../../actions'
+import CONFIG from '../../../Config'
+import { loadPayments, setPayment } from '../../../actions'
 import { IntlProvider, FormattedNumber } from 'react-intl'
 
 import { useSelector, useDispatch } from 'react-redux'

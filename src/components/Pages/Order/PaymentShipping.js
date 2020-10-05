@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import OrderShipping from './shipping'
-import OrderPayment from './payment'
-import OrderPreview from './preview'
+import OrderShipping from './Shipping'
+import OrderPayment from './Payment'
+import OrderPreview from './Preview'
 
 function OrderShippingPayment () {
     return (
@@ -18,7 +18,7 @@ function OrderShippingPayment () {
                 </div>
                 <div className="in-action">
                     <div className="in-action__right">
-                        <Link to="/order-data/"className="btn btn--success in-action__btn in-action__btn--big btn btn--disabled">
+                        <Link to="/order-data/" className="btn btn--success in-action__btn in-action__btn--big btn btn--disabled">
                             Continue in order
                         </Link>
                     </div>

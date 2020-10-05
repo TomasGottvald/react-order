@@ -1,6 +1,6 @@
 import React from 'react'
-import PreviewItem from './previewItem'
-import CONFIG from '../../config'
+import PreviewItem from './PreviewItem'
+import CONFIG from '../../../Config'
 import { IntlProvider, FormattedNumber } from 'react-intl';
 import { useSelector } from 'react-redux'
 
@@ -64,7 +64,7 @@ function OrderPreview() {
     let totalPrice = 0
 
     const previewItems = cartData.map(function(item){
-        totalPrice += Number(item.prices[0].withVat) * Number(item.amount)
+        totalPrice += Number(item.pricesWithVat) * Number(item.amount)
         return <PreviewItem key={item.id} data={item} />
     })
 

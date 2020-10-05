@@ -42,25 +42,6 @@ export const decreaseCount = ( id ) => {
     }
 }
 
-
-// load items
-
-export const loadHomepageTopItems = ( items ) => {
-    return {
-        type: 'LOAD_HP_ITEMS',
-        payload: items
-    }
-}
-
-// articles
-export const loadArticle = ( data ) => {
-    return {
-        type: 'LOAD_ARTICLES',
-        payload: data
-    }
-}
-
-
 // shipping
 export const loadShipping = ( data ) => {
     return {
@@ -75,6 +56,7 @@ export const setShipping = ( item ) => {
         payload: item
     }
 }
+
 // transport
 export const loadPayments = ( data ) => {
     return {
@@ -89,8 +71,8 @@ export const setPayment = ( item ) => {
         payload: item
     }
 }
-// order
 
+// order
 export const saveOrderData = ( data ) => {
     return {
         type: 'SAVE_ORDER_DATA',

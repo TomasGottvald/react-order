@@ -1,6 +1,6 @@
 import React from 'react'
-import CartItem from './cartItem'
-import CONFIG from '../../config'
+import CartItem from './CartItem'
+import CONFIG from '../../../Config'
 import { Link } from 'react-router-dom'
 import { IntlProvider, FormattedNumber } from 'react-intl'
 import { useSelector } from 'react-redux'
@@ -12,8 +12,8 @@ function Cart () {
     let totalPrice = 0
     let currency = ''
     const cartItems = cartData.map(function(item){
-        currency = item.prices[0].currency
-        totalPrice += item.prices[0].withVat * item.amount
+        currency = item.currency
+        totalPrice += item.priceWithVat * item.amount
         return <CartItem key={item.id} data={item} />
     })
 
